@@ -78,6 +78,9 @@
   .chips{display:flex;flex-wrap:wrap;gap:8px}
   .chip{background:var(--chip);border-radius:8px;padding:6px 12px;font-size:13px;font-weight:500;color:var(--text)}
 
+  .trial-note{color:var(--muted);font-size:13.5px;margin:-12px 0 22px}
+  .offer-note{max-width:520px;margin:0 auto 18px;background:#3d6df215;border:1px solid #3d6df245;border-radius:12px;padding:12px 18px;font-size:14.5px;color:var(--text);text-align:center}
+
   /* mock player */
   .player{background:var(--surface);border:1px solid #2a2a2a;border-radius:var(--radius);overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.55)}
   .screen{position:relative;aspect-ratio:16/9;background:
@@ -227,13 +230,15 @@
   <section class="hero">
     <div class="wrap">
       <div>
-        <div class="deal-badge deal-el"><span class="dot"></span> Скидка <b>−33%</b> исчезнет через&nbsp;<span class="t" id="miniTimer">60:00</span></div>
+        <div class="deal-badge deal-el"><span class="dot"></span> Скидка <b>−33%</b> для новых клиентов — ещё&nbsp;<span class="t" id="miniTimer">24:00:00</span></div>
         <h1>Любое видео —<br>в точный текст.<br><span class="r">За минуты.</span></h1>
         <p class="lead">Вставьте ссылку на YouTube или перетащите файл — VideoScribe распознает речь нейросетью Whisper large-v3, расставит таймкоды и отдаст готовые субтитры, документ или чистый текст. Всё — на вашем компьютере, без подписок.</p>
         <div class="cta-row">
-          <a class="btn btn-red btn-big buy-mail" href="#pricing">Купить за <span class="price-txt">$20</span><s class="old deal-el">$30</s></a>
+          <a class="btn btn-red btn-big" href="https://github.com/sashapas87-tech/videoscribe/releases/tag/v1.0.5" target="_blank" rel="noopener noreferrer">⬇ Скачать бесплатно</a>
+          <a class="btn btn-white btn-big buy-mail" href="#pricing">Купить за <span class="price-txt">$20</span><s class="old deal-el">$30</s></a>
           <a class="btn btn-ghost btn-big" href="#guide">Как это работает</a>
         </div>
+        <p class="trial-note">Пробная версия распознаёт первые 3 минуты любого файла — оцените качество до покупки.</p>
         <div class="chips">
           <span class="chip">🎯 Whisper large-v3</span>
           <span class="chip">🌍 98+ языков</span>
@@ -289,16 +294,16 @@
   <section id="guide">
     <div class="wrap">
       <h2>Подробная инструкция</h2>
-      <p class="sub">От покупки до готовых субтитров — восемь коротких «глав», как в хорошем видео.</p>
+      <p class="sub">От скачивания до готовых субтитров — восемь коротких «глав», как в хорошем видео.</p>
 
       <div class="chapter"><span class="ts">00:00</span><div>
-        <h3>Покупка и получение программы</h3>
-        <p>Нажмите <b>«Купить»</b> — откроется письмо на нашу почту. Отправьте его, и в ответ придёт ссылка на установщик <b>VideoScribe-Setup.exe</b> (~120 МБ) и чек. Оплата обсуждается в переписке — удобным вам способом.</p>
+        <h3>Скачайте программу — бесплатно</h3>
+        <p>Откройте <a href="https://github.com/sashapas87-tech/videoscribe/releases/tag/v1.0.5" target="_blank" rel="noopener noreferrer" style="color:#7c9bff">страницу загрузки</a> — там два варианта: <b>обычная версия</b> — установщик <b>VideoScribe-Setup.exe</b> (125 МБ, рекомендуется) и <b>portable-версия</b> — архив <b>VideoScribe-Portable-Windows.zip</b> (187 МБ, работает без установки, хоть с флешки). Пробный режим бесплатно распознаёт первые 3 минуты каждого файла — проверьте качество на своём видео до покупки.</p>
       </div></div>
 
       <div class="chapter"><span class="ts">00:45</span><div>
         <h3>Установка за 30 секунд</h3>
-        <p>Запустите скачанный файл. Если появится синее окно SmartScreen «Windows защитила ваш компьютер» — нажмите <kbd>Подробнее</kbd> → <kbd>Выполнить в любом случае</kbd> (программа просто не имеет платной цифровой подписи). Права администратора не нужны, ярлык появится в меню Пуск и на рабочем столе.</p>
+        <p><b>Обычная версия:</b> запустите <b>VideoScribe-Setup.exe</b>. Если появится синее окно SmartScreen «Windows защитила ваш компьютер» — нажмите <kbd>Подробнее</kbd> → <kbd>Выполнить в любом случае</kbd> (программа просто не имеет платной цифровой подписи). Права администратора не нужны, ярлык появится в меню Пуск и на рабочем столе. <b>Portable-версия:</b> распакуйте архив в любую папку и запустите <b>VideoScribe.exe</b> из папки VideoScribe — установка не требуется.</p>
       </div></div>
 
       <div class="chapter"><span class="ts">01:20</span><div>
@@ -390,6 +395,10 @@
         <div class="a">По той же причине — нет платной подписи. Добавьте файл в исключения антивируса. Сомневаетесь — проверьте установщик на <b>virustotal.com</b> перед запуском.</div>
       </details>
       <details>
+        <summary>Чем обычная версия отличается от portable? <span class="pl">+</span></summary>
+        <div class="a">Функции одинаковые. <b>Обычная</b> ставится установщиком VideoScribe-Setup.exe и создаёт ярлыки — удобнее для постоянной работы. <b>Portable</b> не требует установки: распаковали ZIP — запустили VideoScribe.exe, можно носить на флешке. Обе скачиваются бесплатно со <a href="https://github.com/sashapas87-tech/videoscribe/releases/tag/v1.0.5" target="_blank" rel="noopener noreferrer" style="color:#7c9bff">страницы загрузки</a> и до активации работают в пробном режиме.</div>
+      </details>
+      <details>
         <summary>Распознаёт медленно <span class="pl">+</span></summary>
         <div class="a">Три пути: <b>1)</b> выберите модель поменьше (small/medium) в Настройках; <b>2)</b> включите облачный режим с бесплатным ключом Groq — быстрее в десятки раз; <b>3)</b> если есть видеокарта NVIDIA — напишите нам, пришлём короткую инструкцию по включению GPU-ускорения.</div>
       </details>
@@ -427,7 +436,7 @@
       </details>
       <details>
         <summary>Распознаёт только первые 3 минуты <span class="pl">+</span></summary>
-        <div class="a">Это <b>пробный режим</b> — программа ещё не активирована. Нажмите <b>🔑 Активировать</b>, скопируйте свой <b>Machine ID</b>, пришлите его нам на почту — и вставьте полученный ключ. После активации ограничение снимается, файлы обрабатываются целиком.</div>
+        <div class="a">Это <b>пробный режим</b> — программа ещё не активирована. Понравилось качество? Полная версия — всего <b>$20</b>: акция действует 24 часа и только для новых клиентов. Нажмите <b>🔑 Активировать</b>, скопируйте свой <b>Machine ID</b>, пришлите его нам на почту — и вставьте полученный ключ. После активации ограничение снимается, файлы обрабатываются целиком.</div>
       </details>
       <details>
         <summary>Как работает лицензия «один ключ — один компьютер» <span class="pl">+</span></summary>
@@ -450,23 +459,25 @@
       <h2 style="text-align:center">Одна покупка. Навсегда.</h2>
       <p class="sub" style="text-align:center;margin-left:auto;margin-right:auto">Никаких подписок и лимитов «минут в месяц» — программа ваша, транскрибируйте сколько угодно.</p>
 
+      <div class="offer-note">🎁 Попробовали бесплатные 3 минуты и понравилась программа? Полная версия — всего <b>$20</b>. Акция действует <b>24 часа</b> и только для <b>новых клиентов</b>.</div>
+
       <div class="price-card">
         <span class="plan-tag">Лицензия навсегда · 1 компьютер</span>
         <div class="prices">
           <span class="p-now price-txt">$20</span>
           <span class="p-old deal-el">$30</span>
         </div>
-        <div class="p-note deal-el">Цена со скидкой −33% — только сейчас</div>
+        <div class="p-note deal-el">Скидка −33% для новых клиентов — только 24 часа</div>
         <div class="p-note expired-el" style="display:none">Обычная цена</div>
 
         <div class="timer-box deal-el">
           <div class="lbl"><span class="dot"></span> скидка исчезнет через</div>
-          <div class="big" id="bigTimer">60:00</div>
+          <div class="big" id="bigTimer">24:00:00</div>
         </div>
         <div class="expired-note expired-el">⏱ Скидка закончилась — действует обычная цена $30. Напишите нам: иногда мы возвращаем акцию постоянным подписчикам.</div>
 
         <ul class="inc">
-          <li>Установщик VideoScribe для Windows</li>
+          <li>Обычная и portable-версии для Windows 10/11</li>
           <li>Лицензионный ключ на 1 компьютер (навсегда)</li>
           <li>Все функции: YouTube, офлайн-режим, субтитры, DOCX/PDF, перевод</li>
           <li>Бесплатные обновления версии 1.x</li>
@@ -478,12 +489,12 @@
         <div class="howbuy">
           <b>Как купить (лицензия на 1 компьютер):</b>
           <ol>
-            <li>Нажмите <b>«Скопировать адрес почты»</b> выше, откройте свой почтовый сервис (Gmail, Mail.ru, Outlook…) и вставьте адрес в поле <b>«Кому»</b>.</li>
-            <li>Напишите «Покупаю VideoScribe» и отправьте — в ответ пришлём способ оплаты и ссылку на установщик.</li>
-            <li>После установки программа покажет ваш <b>Machine ID</b> — пришлите его нам, и мы вышлем ключ активации именно для вашего компьютера.</li>
+            <li><a href="https://github.com/sashapas87-tech/videoscribe/releases/tag/v1.0.5" target="_blank" rel="noopener noreferrer" style="color:#7c9bff">Скачайте программу</a> и попробуйте бесплатно — распознаются первые 3 минуты каждого файла.</li>
+            <li>Понравилось? Нажмите <b>«Скопировать адрес почты»</b>, откройте свой почтовый сервис (Gmail, Mail.ru, Outlook…) и напишите нам «Покупаю VideoScribe» — в ответ пришлём способ оплаты.</li>
+            <li>После оплаты пришлите <b>Machine ID</b> из окна активации (кнопка 🔑 в программе) — вышлем ключ, и ограничение 3 минут снимется навсегда.</li>
           </ol>
         </div>
-        <div class="tiny">До активации программа работает в пробном режиме (первые 3 минуты каждого файла). Ключ действует на одном ПК: для второго компьютера нужен отдельный ключ.</div>
+        <div class="tiny">До активации программа работает в пробном режиме (первые 3 минуты каждого файла). Цена $20 — акция для новых клиентов, 24 часа. Ключ действует на одном ПК: для второго компьютера нужен отдельный ключ.</div>
       </div>
     </div>
   </section>
@@ -492,7 +503,7 @@
   <section id="contacts">
     <div class="wrap">
       <h2>Контакты</h2>
-      <p class="sub"><b style="color:#f1f1f1">Для покупки пишите на почту.</b> Нажмите кнопку «Скопировать адрес», откройте свой почтовый сервис и вставьте адрес в поле «Кому». Также сюда — вопросы перед покупкой, проблемы с установкой и запрос версии с диаризацией. Отвечаем в течение 24 часов.</p>
+      <p class="sub"><b style="color:#f1f1f1">Для покупки ключа пишите на почту.</b> Нажмите кнопку «Скопировать адрес», откройте свой почтовый сервис и вставьте адрес в поле «Кому». Также сюда — вопросы перед покупкой, проблемы с установкой и запрос версии с диаризацией. Отвечаем в течение 24 часов.</p>
       <div class="contact-card">
         <div class="cc-l">
           <div class="mail" id="mailText">sashapas81@gmail.com</div>
@@ -520,21 +531,22 @@
 <script>
 (function(){
   var EMAIL = "sashapas81@gmail.com";
-  var HOUR = 60 * 60 * 1000;
+  var DEAL_MS = 24 * 60 * 60 * 1000;
 
   /* ---- таймер скидки (переживает перезагрузку страницы) ---- */
   var start = null;
   try {
-    start = parseInt(localStorage.getItem("vs_deal_start"), 10);
-    if (!start || isNaN(start)) { start = Date.now(); localStorage.setItem("vs_deal_start", String(start)); }
+    start = parseInt(localStorage.getItem("vs_deal24_start"), 10);
+    if (!start || isNaN(start)) { start = Date.now(); localStorage.setItem("vs_deal24_start", String(start)); }
   } catch (e) { start = Date.now(); }
-  var deadline = start + HOUR;
+  var deadline = start + DEAL_MS;
   var expired = false;
 
   function fmt(ms){
     var s = Math.max(0, Math.floor(ms / 1000));
+    var h = Math.floor(s / 3600); s -= h * 3600;
     var m = Math.floor(s / 60); s = s % 60;
-    return (m < 10 ? "0" + m : m) + ":" + (s < 10 ? "0" + s : s);
+    return (h < 10 ? "0" + h : h) + ":" + (m < 10 ? "0" + m : m) + ":" + (s < 10 ? "0" + s : s);
   }
   function setText(id, v){ var el = document.getElementById(id); if (el) el.textContent = v; }
 
@@ -549,7 +561,7 @@
     /* письмо для кнопок покупки */
     var subj = encodeURIComponent("Покупка VideoScribe");
     var body = encodeURIComponent(
-      "Здравствуйте!\n\nХочу купить VideoScribe за " + (expired ? "$30" : "$20 (по акции)") +
+      "Здравствуйте!\n\nХочу купить VideoScribe за " + (expired ? "$30" : "$20 (акция для новых клиентов)") +
       ".\nПодскажите, пожалуйста, способ оплаты.\n\n" +
       "(После установки пришлю Machine ID из окна активации для выпуска ключа.)\n"
     );
